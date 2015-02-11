@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Math Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="mathsContainer">
+        <p id="introText">Internet Explorer is for commies. For that reason, it would be best to enjoy this fantastic game on a browser like
+        Mozzarella FoxFire or Godogle Chromes. If you use Internet Explorer, everything will be screwed up because Internet
+        Explorer can't do anything right.</p>
+        <hr>
+        <hr>
+
+        <div id="canvasContainer">
+          <p class="textOverlay" id="problemString">Problem: 1</p>
+          <p class="textOverlay" id="coinsString">Coins: 0</p>
+          <canvas id="myCanvas" width="640px" height="480px"></canvas>
+        </div>
+
+        <div id="statusContainer">
+          <p id="statusMsg">You have yet to have learned even the most basic things in life.</p>
+          <p id="streakMsg"><p>
+          <hr>
+          <p id="itemDisplay">[inventory]</p>
+        </div>
+
+        <!-- The plan is to get rid of this input box and just allow the canvas to accept and display
+        the input. That kinda seems hard to do... so deferring that for now. #lazy -->
+        <input id="answerInput" type="text" value="type answer here!"></input>
+        
+        <hr>
+        <hr>
+        <p id="footer">Version 0.1.0.0 Hyper-Alpha.  All rights maybe reserved.</p>
+      
+    </div>
+  </body>
+
+  <script src="jquery-2.1.3.js"></script>
+  <script src="mathsengine.js"></script>
+
+</html>

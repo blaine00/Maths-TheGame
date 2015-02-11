@@ -1,0 +1,61 @@
+@font-face {
+  font-family:PressStart2P;
+  src:url(PressStart2P-Regular.ttf);
+}
+
+body, input {
+  font-family:PressStart2P;
+  font-size:20px;
+}
+
+#mathsContainer {
+	width:860px;
+	height:2000px;
+}
+
+#canvasContainer {
+	float:left;
+	position:relative;
+}
+
+#myCanvas {
+	border:1px solid #000000;
+	z-index: 0;
+}
+
+#statusContainer {
+	float:right;
+	width:200px;
+}
+
+#answerInput {
+	border:1px solid red;
+	width:640px;
+	height:30px;
+	text-align:center;
+	color: red;
+}
+
+.textOverlay {
+	position:absolute;
+	z-index:1;
+	margin:0px; /* for perfectly flush p's */
+}
+
+#problemString {
+	top:6px;
+	left:4px;
+}
+
+#coinsString {
+	top:6px;
+	right:4px;
+}
+
+#streakMsg {
+	color: green;
+}
+
+#itemDisplay {
+	color: brown;
+}
