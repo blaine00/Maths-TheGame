@@ -25,13 +25,12 @@ document.getElementById('answerInput').addEventListener("keypress", function(e){
 
 document.getElementById('answerInput').addEventListener("keydown", function(e){
     if (!firstKeyPressed){
-        textboxDefaultString = "";
+        e.target.value = "";
         updateStrings();
     }
     firstKeyPressed = true;
     
 });
-
 
 document.getElementById('answerInput').addEventListener("click", function(e){
   if (e.target.value == textboxDefaultString) {
