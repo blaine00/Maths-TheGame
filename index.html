@@ -6,35 +6,47 @@
   </head>
 
   <body>
-    <div id="mathsContainer">
-        <p id="introText">Internet Explorer is for commies. For that reason, it would be best to enjoy this fantastic game on a browser like
-        Mozzarella FoxFire or Godogle Chromes. If you use Internet Explorer, everything will be screwed up because Internet
-        Explorer can't do anything right.</p>
+    <div id="mathsContainer"> <!-- main div wrapper -->
+
+      <div id="headerContainer"> <!-- up top -->
+        <p id="introText">This is MATHS: THE GAME.
+        <p>IE sucks.  Don't use it.</p>
         <hr>
         <hr>
+      </div>
 
-        <div id="canvasContainer">
-          <p class="textOverlay" id="problemString">Problem: 1</p>
-          <p class="textOverlay" id="coinsString">Coins: 0</p>
-          <canvas id="myCanvas" width="640px" height="480px"></canvas>
-        </div>
-
-        <div id="statusContainer">
-          <p id="statusMsg">You have yet to have learned even the most basic things in life.</p>
-          <p id="streakMsg"><p>
-          <hr>
-          <p id="itemDisplay">[inventory]</p>
-        </div>
-
-        <!-- The plan is to get rid of this input box and just allow the canvas to accept and display
-        the input. That kinda seems hard to do... so deferring that for now. #lazy -->
+      <div id="canvasContainer"> <!-- floats left -->
+        <p class="textOverlay" id="problemString">Problem: 1</p>
+        <p class="textOverlay" id="coinsString">Coins: 0</p>
+        <canvas id="myCanvas" width="640px" height="480px"></canvas>
         <input id="answerInput" type="text" value="type answer here!"></input>
-        
+      </div>
+
+      <div id="statusContainer"> <!-- floats right -->
+        <p id="statusMsg">You have yet to have learned even the most basic things in life.</p>
+        <p id="streakMsg"><p>
+        <hr>
+        <p id="itemHeader">[inventory]</p>
+        <div id="inventoryContainer">
+          <p id="inventoryStatus">You have no items.</p>
+          <div id="inventoryList"></div>
+        </div>
+        <hr>
+        <p id="shopHeader">[shop]</p>
+        <div id="shop">
+          <p id="shopOpenStatus">The shop is closed.</p>
+          <img class="hidden" id="shopitemMathbot" src="mathbot.jpg"></img>
+          <p class="hidden shopitemCaption" id="MathbotCaption">Mathbot (10 coins)</p>
+        </div>
+      </div>
+
+      <div id="footerContainer"> <!-- at the bottom -->
         <hr>
         <hr>
         <p id="footer">Version 0.1.0.0 Hyper-Alpha.  All rights maybe reserved.</p>
-      
-    </div>
+      </div>
+
+    </div> <!-- end of main div wrapper -->
   </body>
 
   <script src="jquery-2.1.3.js"></script>

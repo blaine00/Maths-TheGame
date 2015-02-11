@@ -16,10 +16,13 @@ body, input {
 #canvasContainer {
 	float:left;
 	position:relative;
+	width:640px;
+	height:800px;
 }
 
 #myCanvas {
 	border:1px solid #000000;
+	border-bottom:none;
 	z-index: 0;
 }
 
@@ -53,9 +56,34 @@ body, input {
 }
 
 #streakMsg {
-	color: green;
+	color:green;
 }
 
-#itemDisplay {
-	color: brown;
+#itemHeader, #inventoryContainer {
+	color:brown;
+}
+
+#shopHeader, #shop {
+	color:blue;
+}
+
+.shopitemCaption {
+	font-size:x-small;
+}
+
+img {
+	width:80px;
+	height:80px;
+}
+
+#footerContainer {
+	clear: both;
+}
+
+#introText {
+	font-size:xx-large;
+}
+
+#footer {
+	font-size:x-small;
 }
