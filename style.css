@@ -87,3 +87,10 @@ img {
 #footer {
 	font-size:x-small;
 }
+
+table, th, td {
+	border: 1px solid brown;
+	text-align: center;
+	font-size:small;
+	/* margin: auto; */
+}

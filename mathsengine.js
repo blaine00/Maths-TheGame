@@ -1,5 +1,6 @@
 //initialize the varibles
 var i = 0;
+var j = 0;
 var x = 0;
 var y = 0;
 var answer = 0;
@@ -155,10 +156,54 @@ function updateStrings(){
   document.getElementById('shopOpenStatus').innerHTML = shopOpenStatus;
 }
 
+// Updates and displays the inventory table, depending on what's bought from the shop.
 function updateInventory(){
-  // TODO: update the inventory list.
   $('#inventoryStatus').hide();
-  document.getElementById('inventoryList').innerHTML += '<img src="mathbot.jpg"></img>';
+
+  /* different method for changing the table as is... dunno if I want to do that...
+  var content = document.getElementById('inventoryTable').innerHTML;
+  if (content === "") { // might need to compare to null instead...
+    content = "<tr><th>Item</th><th>Quantity</th></tr>";
+  }
+  */
+
+  var content = "<tr><th>Item</th><th>Qty</th></tr>";
+  var item = [];
+  var quantity = [];
+  fillItemAndQuantity(inventory, item, quantity);
+
+  var HtmlStringForImage = "";
+  for (i = 0; i < item.length; i++) {
+    HtmlStringForImage = getMatchingImageHtmlForItemType(item[i]);
+    content += "<tr><td>"+HtmlStringForImage+"</td><td>"+quantity[i]+"</td>";
+  }
+  document.getElementById('inventoryTable').innerHTML = content;
+}
+
+function getMatchingImageHtmlForItemType(itemType) {
+  switch (itemType) {
+    case "shopitemMathbot": return '<img src="mathbot.jpg"></img>';
+    default:
+      alert("ERROR: could not add this item's picture into the inventory list!");
+      break;
+  }
+}
+
+function fillItemAndQuantity(inventory, item, quantity){
+  for (i = 0; i < inventory.length; i++) {
+    for (j = 0; j < item.length; j++) {
+      if (inventory[i] === item[j]) { // we saw the same item
+        quantity[j]++;
+      } else { // we saw a new kind of item
+        item.push(inventory[i]);
+        quantity.push(1);
+      }
+    }
+    if (item.length === 0) { // we're seeing the very first item
+      item.push(inventory[i]);
+      quantity.push(1);
+    }
+  }
 }
 
 // init some values for easier debug.
