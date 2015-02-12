@@ -18,6 +18,9 @@ var shopOpenStatus = document.getElementById('shopOpenStatus').innerHTML;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var inventory = [];
+var level = 1;
+var exp = 0;
+var arena = 0;
 
 
 // Check for Enter key in textbox
