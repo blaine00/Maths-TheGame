@@ -15,35 +15,35 @@
         <hr>
       </div>
         
-        <div id="inventoryContainer">
-        <p id="inventoryStatus">You have no items.</p>
-          <!-- <div id="inventoryList"></div> -->
-          <table id="inventoryTable"></table>
+      <div id="actionContainer"> <!-- the area of main game focus -->
+
+        <div id="inventoryContainer"> <!-- on the left -->
+          <p id="inventoryHeader">[inventory]</p>
+          <p id="inventoryStatus">You have no items.</p>
+          <table id="inventoryTable" class="hidden"></table>
         </div>
 
-      <div id="canvasContainer"> <!-- floats left -->
-        <p class="textOverlay" id="problemString">Problem: 1</p>
-        <p class="textOverlay" id="coinsString">Coins: 0</p>
-		<p class="textOverlay" id="currentProblem">0+0</p>
-        <!-- <canvas id="myCanvas" width="640px" height="480px"></canvas> -->
-        <input id="answerInput" type="text" value="type answer here!"></input>
-      </div>
-
-      <div id="statusContainer"> <!-- floats right -->
-        <p id="statusMsg">You have yet to have learned even the most basic things in life.</p>
-        <p id="streakMsg"><p>
-        <hr>
-        <p id="itemHeader">[inventory]</p>
-        <!--<div id="inventoryContainer">
-
-        </div>-->
-        <hr>
-        <p id="shopHeader">[shop]</p>
-        <div id="shop">
-          <p id="shopOpenStatus">The shop is closed.</p>
-          <img id="shopitemMathbot" class="hidden" src="mathbot.jpg"></img>
-          <p id="MathbotCaption" class="hidden shopitemCaption" >Mathbot (10 coins)</p>
+        <div id="battleContainer"> <!-- in the middle -->
+          <div id="canvasContainer"> <!-- where the arena is displayed -->
+            <p class="textOverlay" id="problemString">Problem: 1</p>
+            <p class="textOverlay" id="coinsString">Coins: 0</p>
+    		    <p class="textOverlay" id="currentProblem">0+0</p>
+          </div>
+          <input id="answerInput" type="text" value="type answer here!"></input>
         </div>
+
+        <div id="statusContainer"> <!-- on the right -->
+          <p id="statusMsg">You have yet to have learned even the most basic things in life.</p>
+          <p id="streakMsg"><p>
+          <hr>
+          <p id="shopHeader">[shop]</p>
+          <div id="shop">
+            <p id="shopOpenStatus">The shop is closed.</p>
+            <img id="shopitemMathbot" class="hidden" src="mathbot.jpg"></img>
+            <p id="MathbotCaption" class="hidden shopitemCaption" >Mathbot (10 coins)</p>
+          </div>
+        </div>
+
       </div>
 
       <div id="footerContainer"> <!-- at the bottom -->

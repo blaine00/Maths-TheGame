@@ -134,7 +134,7 @@ function submitAnswer(){
 // open the shop so items can be purchased.
 function openShop(){
   shopOpenStatus = ""; // previous: The shop is open for business!
-  $('.hidden').show();
+  $('#shop *').show(); // unhide the entire shop.
 }
 
 // clears all text from the answer textbox.
@@ -163,6 +163,7 @@ function updateStrings(){
 // Updates and displays the inventory table, depending on what's bought from the shop.
 function updateInventory(){
   $('#inventoryStatus').hide();
+  $('#inventoryTable').show();
 
   /* different method for changing the table as is... dunno if I want to do that...
   var content = document.getElementById('inventoryTable').innerHTML;

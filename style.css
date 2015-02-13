@@ -9,41 +9,51 @@ body, input {
 }
 
 #mathsContainer {
-	width:1060px;
-	height:2000px;
-    margin-left:auto;
-    margin-right:auto;
+	width:1200px;
+    margin:auto;
+}
+
+#actionContainer {
+
 }
 
 #inventoryContainer {
-    float:left;
-    position:relative;
-    width:200px;
+	width:200px;
     height:800px;
+    float:left;
+}
+
+#battleContainer {
+	width:640px;
+	padding-left:80px;
+	padding-right:80px;
+	float:left;
 }
 
 #canvasContainer {
-	float:left;
-	position:relative;
 	width:640px;
-	height:510px;
-	z-index: 0;
+	height:480px;
+	z-index:0;
 	background-image: url(images/arena01.png);
+	background-repeat:no-repeat;
+	position:relative;
 }
 
 #statusContainer {
-	float:right;
 	width:200px;
+	height:800px;
+
+	float:left;
 }
 
 #answerInput {
-	border:1px solid red;
-	width:640px;
+	width:638px;
 	height:30px;
+	border:1px solid red;
 	text-align:center;
 	color: red;
-	position:relative;
 	top:480px;
+	padding:0px;
 }
 
 .textOverlay {
@@ -105,5 +115,5 @@ table, th, td {
 	border: 1px solid brown;
 	text-align: center;
 	font-size:small;
-	/* margin: auto; */
+	margin: auto;
 }
