@@ -15,8 +15,8 @@ var streakMsg = "";
 var firstKeyPressed = false;
 var isShopOpen = false;
 var shopOpenStatus = document.getElementById('shopOpenStatus').innerHTML;
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+//var c = document.getElementById("myCanvas");
+//var ctx = c.getContext("2d");
 var inventory = [];
 var level = 1;
 var exp = 0;
@@ -127,7 +127,7 @@ function submitAnswer(){
   
   if (isShopOpen) { openShop(); }
   clearAnswerTextbox();
-  updateCanvas();
+  //updateCanvas();
   updateStrings();
 }
 
@@ -143,11 +143,11 @@ function clearAnswerTextbox(){
 }
 
 // clear then draw the problem string onto the canvas.
-function updateCanvas(){
-  ctx.clearRect(0,0,c.width, c.height);
-  ctx.font = "60px PressStart2P";
-  ctx.fillText(problemString, 200, 250);
-}
+//function updateCanvas(){
+  //ctx.clearRect(0,0,c.width, c.height);
+  //ctx.font = "60px PressStart2P";
+  //ctx.fillText(problemString, 200, 250);
+//}
 
 // updates the HTML strings to display the most up-to-date data.
 function updateStrings(){
@@ -157,6 +157,7 @@ function updateStrings(){
   document.getElementById('inventoryStatus').innerHTML = inventoryStatus;
   document.getElementById('streakMsg').innerHTML = streakMsg;
   document.getElementById('shopOpenStatus').innerHTML = shopOpenStatus;
+  document.getElementById('currentProblem').innerHTML = problemString;
 }
 
 // Updates and displays the inventory table, depending on what's bought from the shop.
@@ -220,6 +221,7 @@ $(window).load(function(){
   $('.hidden').hide();
   lolImaBetaTester(); // TESTING PURPOSES ONLY
   generateProblem();
-  updateCanvas();
+  updateStrings();
+  //updateCanvas();
   document.getElementById('answerInput').focus();
 });

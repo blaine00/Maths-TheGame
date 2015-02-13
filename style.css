@@ -27,12 +27,8 @@ body, input {
 	position:relative;
 	width:640px;
 	height:800px;
-}
-
-#myCanvas {
-	border:1px solid #000000;
-	border-bottom:none;
 	z-index: 0;
+	background-image: url(images/arena01.png);
 }
 
 #statusContainer {
@@ -46,6 +42,8 @@ body, input {
 	height:30px;
 	text-align:center;
 	color: red;
+	position:relative;
+	top:400px;
 }
 
 .textOverlay {
@@ -63,6 +61,12 @@ body, input {
 	top:6px;
 	right:4px;
 }
+
+#currentProblem{
+	top:150px;
+	left:200px;
+	font-size:60px;
+	}
 
 #streakMsg {
 	color:green;
