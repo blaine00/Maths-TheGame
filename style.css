@@ -9,8 +9,17 @@ body, input {
 }
 
 #mathsContainer {
-	width:860px;
+	width:1060px;
 	height:2000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#inventoryContainer {
+    float:left;
+    position:relative;
+    width:200px;
+    height:800px;
 }
 
 #canvasContainer {
