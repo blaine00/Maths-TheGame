@@ -27,7 +27,7 @@ var arena = 0;
 document.getElementById('answerInput').addEventListener("keypress", function(e){
   if (e.keyCode === 13) {
     submitAnswer();
-  } 
+  }
 });
 
 // Handle the erasing of default textbox string via keys
@@ -64,11 +64,11 @@ function purchaseItem(itemID){
         updateInventory();
         updateStrings();
       } else {
-        alert("Not enough coins..."); // will implement differently later...
+        $('#shop-alert').fadeIn(500).fadeOut(1000);
       }
       break;
   }
-  
+
 }
 
 // builds the math problem and finds the answer and the string to draw on the canvas.
@@ -79,7 +79,7 @@ function generateProblem(){
   problemString = x + "+" + y;
 }
 
-// randomly returns a positive string for statusMsg. 
+// randomly returns a positive string for statusMsg.
 function getSuccessString(){
   switch(Math.floor(Math.random()*5)) {
     case 0: return "That is correct!";
@@ -90,7 +90,7 @@ function getSuccessString(){
   }
 }
 
-// randomly returns a negative string for statusMsg. 
+// randomly returns a negative string for statusMsg.
 function getFailureString(){
   switch(Math.floor(Math.random()*5)) {
     case 0: return "That is wrong!";
@@ -124,7 +124,7 @@ function submitAnswer(){
 
   problemNumber++;
   generateProblem();
-  
+
   if (isShopOpen) { openShop(); }
   clearAnswerTextbox();
   //updateCanvas();
