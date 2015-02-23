@@ -94,6 +94,10 @@ body, input {
 	font-size:x-small;
 }
 
+.shopitemDescription {
+	font-size:xx-small;
+}
+
 img {
 	width:80px;
 	height:80px;

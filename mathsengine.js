@@ -62,6 +62,7 @@ function purchaseItem(itemID){
         updateInventory();
         updateStrings();
       } else {
+        $('#shop-alert').finish();
         $('#shop-alert').fadeIn(500).fadeOut(1000);
       }
       break;
@@ -72,6 +73,7 @@ function purchaseItem(itemID){
 // builds the math problem and finds the answer and the string to draw on the canvas.
 function generateProblem() {
     $("#currentProblem").effect("bounce", { times: 3 }, 300);
+    
     if (arena == 1) {
         answer = 11; //This is to ensure the loop will run the first time.
         while (answer > 10) { //For arena 1, we don't want problems with answer more than 10.
@@ -241,7 +243,7 @@ function upgradeArena() {
 
 // init some values for easier debug.
 function lolImaBetaTester(){
-  coins = 199;
+  coins = 19;
   streak = 9;
 }
 
