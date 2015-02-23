@@ -89,6 +89,7 @@ function generateProblem() {
         answer = x + y;
         problemString = x + "+" + y;
     }
+
 }
 
 // randomly returns a positive string for statusMsg.
@@ -223,6 +224,12 @@ function fillItemAndQuantity(inventory, item, quantity){
       quantity.push(1);
     }
   }
+}
+
+function generateCoinsEarned() {
+    //This function will be used to determine how many coins are added when
+    //a problem is answered correctly. It will be based on what items you
+    //have.
 }
 
 function upgradeArena() {
