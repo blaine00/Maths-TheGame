@@ -15,13 +15,11 @@ var streakMsg = "";
 var firstKeyPressed = false;
 var isShopOpen = false;
 var shopOpenStatus = document.getElementById('shopOpenStatus').innerHTML;
-//var c = document.getElementById("myCanvas");
-//var ctx = c.getContext("2d");
 var inventory = [];
 var level = 1;
 var exp = 0;
-var arena = 0;
-
+var arena = 1;
+var arenaCost = 200; //This goes up everytime an arena is purchased.
 
 // Check for Enter key in textbox
 document.getElementById('answerInput').addEventListener("keypress", function(e){
@@ -73,10 +71,21 @@ function purchaseItem(itemID){
 
 // builds the math problem and finds the answer and the string to draw on the canvas.
 function generateProblem(){
-  x = Math.floor((Math.random()*9)+1);
-  y = Math.floor((Math.random()*9)+1);
-  answer = x + y;
-  problemString = x + "+" + y;
+    if (arena == 1) {
+        answer = 11; //This is to ensure the loop will run the first time.
+        while (answer > 10) { //For arena 1, we don't want problems with answer more than 10.
+            x = Math.floor((Math.random() * 9) + 1);
+            y = Math.floor((Math.random() * 5) + 1);
+            answer = x + y;
+        }
+        problemString = x + "+" + y;
+    }
+    if (arena == 2) {
+        x = Math.floor((Math.random() * 9) + 1);
+        y = Math.floor((Math.random() * 9) + 1);
+        answer = x + y;
+        problemString = x + "+" + y;
+    }
 }
 
 // randomly returns a positive string for statusMsg.
@@ -129,6 +138,11 @@ function submitAnswer(){
   clearAnswerTextbox();
   //updateCanvas();
   updateStrings();
+
+  if (coins >= arenaCost) {
+      $('#upgradeArenaButton').show();
+  }
+
 }
 
 // open the shop so items can be purchased.
@@ -142,12 +156,6 @@ function clearAnswerTextbox(){
   document.getElementById('answerInput').value = "";
 }
 
-// clear then draw the problem string onto the canvas.
-//function updateCanvas(){
-  //ctx.clearRect(0,0,c.width, c.height);
-  //ctx.font = "60px PressStart2P";
-  //ctx.fillText(problemString, 200, 250);
-//}
 
 // updates the HTML strings to display the most up-to-date data.
 function updateStrings(){
@@ -211,9 +219,24 @@ function fillItemAndQuantity(inventory, item, quantity){
   }
 }
 
+function upgradeArena() {
+    if (arena == 1) {
+        coins -= arenaCost;
+        arena += 1;
+        document.getElementById("canvasContainer").style.backgroundImage = "url(images/arena02.png)";
+        statusMsg = "Arena has been upgraded.";
+        updateStrings();
+        arenaCost = arenaCost * 2; //The cost has doubled
+        //Make the button disappear if you don't have enough coins to upgrade again.
+        if (coins < arenaCost) {
+            $('#upgradeArenaButton').hide();
+        }
+    }
+}
+
 // init some values for easier debug.
 function lolImaBetaTester(){
-  coins = 100;
+  coins = 199;
   streak = 9;
 }
 
@@ -223,6 +246,9 @@ $(window).load(function(){
   lolImaBetaTester(); // TESTING PURPOSES ONLY
   generateProblem();
   updateStrings();
-  //updateCanvas();
+    //updateCanvas();
+  if (coins < arenaCost) {
+      $('#upgradeArenaButton').hide();
+  }
   document.getElementById('answerInput').focus();
 });
