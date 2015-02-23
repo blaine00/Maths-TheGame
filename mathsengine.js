@@ -70,7 +70,8 @@ function purchaseItem(itemID){
 }
 
 // builds the math problem and finds the answer and the string to draw on the canvas.
-function generateProblem(){
+function generateProblem() {
+    $("#currentProblem").effect("bounce", { times: 3 }, 300);
     if (arena == 1) {
         answer = 11; //This is to ensure the loop will run the first time.
         while (answer > 10) { //For arena 1, we don't want problems with answer more than 10.
@@ -116,8 +117,10 @@ function submitAnswer(){
   if (submittedAnswer === answer) { // CORRECT
     statusMsg = getSuccessString();
     coins++;
+    $("#coinsString").effect("bounce", { times: 1 }, 100);
     streak++;
   } else { // INCORRECT
+    $("#canvasContainer").effect("bounce", { times: 4 }, 300);
     statusMsg = getFailureString();
     streak = 0;
   }
@@ -166,6 +169,7 @@ function updateStrings(){
   document.getElementById('streakMsg').innerHTML = streakMsg;
   document.getElementById('shopOpenStatus').innerHTML = shopOpenStatus;
   document.getElementById('currentProblem').innerHTML = problemString;
+  
 }
 
 // Updates and displays the inventory table, depending on what's bought from the shop.
@@ -228,6 +232,7 @@ function upgradeArena() {
         updateStrings();
         arenaCost = arenaCost * 2; //The cost has doubled
         //Make the button disappear if you don't have enough coins to upgrade again.
+        document.getElementById('answerInput').focus(); // Put the focus back on the input.
         if (coins < arenaCost) {
             $('#upgradeArenaButton').hide();
         }
@@ -251,4 +256,5 @@ $(window).load(function(){
       $('#upgradeArenaButton').hide();
   }
   document.getElementById('answerInput').focus();
+  
 });
