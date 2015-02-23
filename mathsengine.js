@@ -243,7 +243,7 @@ function lolImaBetaTester(){
 // run init logic once the window is fully loaded.
 $(window).load(function(){
   $('.hidden').hide();
-  lolImaBetaTester(); // TESTING PURPOSES ONLY
+  //lolImaBetaTester(); // TESTING PURPOSES ONLY
   generateProblem();
   updateStrings();
     //updateCanvas();
