@@ -90,6 +90,10 @@ body, input {
 	color:blue;
 }
 
+#shop {
+	background-color:#D0D0D0;
+}
+
 .shopitemCaption {
 	font-size:x-small;
 }
@@ -117,7 +121,12 @@ img {
 
 table, th, td {
 	border: 1px solid brown;
-	text-align: center;
+	text-align:center;
 	font-size:small;
 	margin: auto;
+}
+
+#shop-alert {
+	color:#ff0000;
+	display:none;
 }
