@@ -151,7 +151,11 @@ function submitAnswer(){
 
 }
 
-
+// open the shop so items can be purchased.
+function openShop(){
+  shopOpenStatus = ""; // previous: The shop is open for business!
+  $('#shop *').show(); // unhide the entire shop.
+}
 
 // clears all text from the answer textbox.
 function clearAnswerTextbox(){
@@ -169,12 +173,6 @@ function updateStrings(){
   document.getElementById('shopOpenStatus').innerHTML = shopOpenStatus;
   document.getElementById('currentProblem').innerHTML = problemString;
   
-}
-
-// open the shop so items can be purchased.
-function openShop(){
-  shopOpenStatus = ""; // previous: The shop is open for business!
-  $('#shop *').show(); // unhide the entire shop.
 }
 
 // Updates and displays the inventory table, depending on what's bought from the shop.
@@ -204,7 +202,7 @@ function updateInventory(){
 
 function getMatchingImageHtmlForItemType(itemType) {
   switch (itemType) {
-    case "shopitemMathbot": return '<img src="images/mathbot.png"></img>';
+    case "shopitemMathbot": return '<img src="mathbot.jpg"></img>';
     default:
       alert("ERROR: could not add this item's picture into the inventory list!");
       break;

@@ -102,11 +102,10 @@ body, input {
 	font-size:xx-small;
 }
 
-
-itemImage {
-    float:left;
+img {
+	width:80px;
+	height:80px;
 }
-
 
 #footerContainer {
 	clear: both;
